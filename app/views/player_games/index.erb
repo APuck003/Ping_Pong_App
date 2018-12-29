@@ -1,0 +1,3 @@
+<% @playergames.each do |playergame| %>
+  <p><%= link_to playergame.id, playergame_path(playergame) %></p>
+<% end %>
