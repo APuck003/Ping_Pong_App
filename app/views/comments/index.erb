@@ -1,0 +1,6 @@
+<h1>List of all Comments</h1>
+
+
+<%@comments.each do |comment|%>
+  <p><%=link_to comment.description, comment_path(comment)%>
+<%end%>
