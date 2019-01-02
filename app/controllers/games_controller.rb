@@ -9,6 +9,8 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @game.player_games.build
+    @game.player_games.build
   end
 
   def create
@@ -37,12 +39,13 @@ class GamesController < ApplicationController
 
   def destroy
     Game.find(params[:id]).destroy
+    redirect_to games_path
   end
 
     private
 
     def game_params
-      params.require(:game).permit(:location, :ranked)
+      params.require(:game).permit(:location, :ranked, player_games_attributes: [ :id, :score,  :player_id])
     end
 
 
