@@ -1,14 +1,18 @@
 class UsersController < ApplicationController
-
+  skip_before_action :authorized, only: [:new, :create]
   def index
     @users = User.all
   end
 
   def show
+    @user = User.find(params[:id])
     if logged_in?
       flash[:msg] = "Welcome #{current_user.username}"
     end
-    @user = User.find(params[:id])
+    if params[:id] != current_user.id.to_s
+      flash[:unauthorized] = "Hey, #{current_user.username}, stay on your own page!"
+      redirect_to user_path(current_user)
+    end
   end
 
 
