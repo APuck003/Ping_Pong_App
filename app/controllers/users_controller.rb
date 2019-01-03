@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if logged_in?
+      flash[:msg] = "Welcome #{current_user.username}"
+    end
     @user = User.find(params[:id])
   end
 
