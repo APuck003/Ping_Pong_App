@@ -10,6 +10,10 @@ Game.destroy_all
 Comment.destroy_all
 PlayerGame.destroy_all
 
+
+user1 = User.create(username: 'ryan', password: '123', password_confirmation: '123')
+user2 = User.create(username: 'francisco', password: '456', password_confirmation: '456')
+
 player1 = Player.create([{name: 'Joe', alias: 'Iceman'}])
 player2 = Player.create([{name: 'Ted', alias: 'Fireman'}])
 player3 = Player.create([{name: 'Max', alias: 'Stone'}])
@@ -22,11 +26,11 @@ game3 = Game.create(location:'Spain', ranked:false)
 game4 = Game.create(location:'Dallas', ranked:false)
 game5 = Game.create(location:'Austin', ranked:true)
 
-comment1 = Comment.create(description:'Hey this is a really cool game', game_id: game1.id)
-comment2 = Comment.create(description:'Another awesome pong game', game_id: game2.id)
-comment3 = Comment.create(description:'Look ma no hands', game_id: game3.id)
-comment4 = Comment.create(description:'Best Pong Game EVER', game_id: game4.id)
-comment5 = Comment.create(description:'Look at this awesome comment', game_id: game5.id)
+comment1 = Comment.create(description:'Hey this is a really cool game', game_id: game1.id, user_id: user1.id)
+comment2 = Comment.create(description:'Another awesome pong game', game_id: game2.id, user_id: user2.id)
+comment3 = Comment.create(description:'Look ma no hands', game_id: game3.id, user_id: user1.id)
+comment4 = Comment.create(description:'Best Pong Game EVER', game_id: game4.id, user_id: user2.id)
+comment5 = Comment.create(description:'Look at this awesome comment', game_id: game5.id, user_id: user1.id)
 
 playergame1 = PlayerGame.create(player_id: 1, game_id: 1, score: 11)
 playergame2 = PlayerGame.create(player_id: 2, game_id: 1, score: 10)

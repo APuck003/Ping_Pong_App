@@ -1,3 +1,14 @@
 <h1><%=@game.location%></h1>
 <%= button_to "Delete this Game", @game, :method => :delete %>
 <%= button_to "Edit this Game", edit_game_url, :method => :get %>
+
+<% @comments.each do |comment| %>
+  <p><%=comment.description%> <i>created by: </i><strong><%= comment.user.username %></strong></p>
+<% end %>
+
+<%=form_for @comment do |f|%>
+  <%=f.text_field :description%>
+  <%=f.hidden_field :game_id%>
+  <%=f.hidden_field :user_id%>
+  <%=f.submit%>
+<%end%>
