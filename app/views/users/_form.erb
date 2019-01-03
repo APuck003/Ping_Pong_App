@@ -1,0 +1,10 @@
+<%if flash[:error]%>
+<p><%=flash[:error]%></p>
+<%end%>
+<%= form_for @user do |f|%>
+<%= f.label :username%>
+<%= f.text_field :username, placeholder: "Username"%>
+<%= f.password_field :password, placeholder: "Password"%>
+<%= f.password_field :password_confirmation, placeholder: "Confirm Password"%>
+<%=f.submit%>
+<%end%>
