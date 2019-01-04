@@ -1,5 +1,5 @@
 <h1><%=@game.location%></h1>
-<table class="table">
+<table class="table" style="border-radius:5px;color:black;background: rgba(220, 175, 220, 0.8)">
   <tr>
     <th scope="col">Player</th>
     <th scope="col">Score</th>
@@ -14,7 +14,7 @@
   </tr>
 </table>
 <%= button_to "Edit this Game", edit_game_url, :method => :get, class: "btn btn-warning" %>
-<%= button_to "Delete this Game", @game, :method => :delete, class: "btn btn-danger" %>
+<%= button_to "Delete this Game", @game, :method => :delete, class: "m-2 btn btn-danger" %>
 <div style="border-radius:5px;margin:5px;padding:5px;background: rgba(76, 175, 80, 0.7)">
 <% @comments.each do |comment| %>
   <p><span style="color:yellow; text-shadow: 4px 4px 10px #000000;"><%=comment.description%></span>

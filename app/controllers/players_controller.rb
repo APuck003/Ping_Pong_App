@@ -12,10 +12,10 @@ class PlayersController < ApplicationController
   end
 
   def create
-    player = Player.new(player_params)
-    if player.valid?
-      player.save
-      redirect_to player_path(player)
+    @player = Player.new(player_params)
+    if @player.valid?
+      @player.save
+      redirect_to player_path(@player)
     else
       render :new
     end

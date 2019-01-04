@@ -1,3 +1,5 @@
-<%@games.each do |game|%>
-  <p><%=link_to game.location, game_path(game)%>
-<%end%>
+<div class="p-3" style="text-shadow: 4px 4px 10px #000000;border-radius:5px;margin:5px;padding:5px;background: rgba(76, 175, 80, 0.7)">
+  <%@games.each do |game|%>
+    <p><%=link_to game.location, game_path(game), style:"color:yellow"%></p>
+    <%end%>
+</div>
