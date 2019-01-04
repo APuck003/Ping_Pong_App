@@ -1,5 +1,5 @@
 <%= form_for @player, :html => {class: "form-flex"} do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :alias %>
-  <%= f.submit %>
+  <%= f.text_field :name, placeholder: "Name" %>
+  <%= f.text_field :alias, placeholder: "Alias" %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

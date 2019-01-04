@@ -5,6 +5,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @players = @game.players
     @comments = Comment.where(game_id: @game.id)
     @comment = @game.comments.new
     @comment.user = current_user

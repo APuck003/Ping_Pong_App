@@ -5,5 +5,5 @@
     <%= playergame_form.select :player_id, Player.all.collect { |p| [ p.alias, p.id ] } %>
     <%= playergame_form.text_field :score, placeholder: "Score" %>
   <% end %>
-  <%=f.submit%>
+  <%=f.submit class: "btn btn-primary"%>
 <% end %>

@@ -1,9 +1,11 @@
 .yield-body {
   padding-top: 10vh;
+  padding-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white; 
 }
 
 .form-flex {
@@ -15,4 +17,23 @@
 .form-flex input {
   margin-top: 10px;
   border-radius: 1px;
+}
+
+table {
+  width: 30% !important;
+}
+
+body, html {
+  height: 96%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("featured-image-750x410.jpg");
+  /* Full height */
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
