@@ -1,7 +1,1 @@
-<%= form_for @playergame do |f| %>
-  <%= f.select :player_id, Player.all.collect { |p| [ p.alias, p.id ] } %>
-  <p>VS</p>
-  <%= f.select :player_id, Player.all.collect { |p| [ p.alias, p.id ] } %>
-  <%= f.text_field :score, placeholder: "Score" %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
